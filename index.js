@@ -18,7 +18,8 @@ $(document).ready(function(){
     $("#submit").click(function(){
         let token = getCookie("not-so-secret-token");
         const d = new Date();
-        if (token === "" && d.getTime() - Number(token) >= 60_000){
+        alert(d.getTime() - Number(token))
+        if (token === "" || d.getTime() - Number(token) >= 10_000){
             let faculty = $("#faculty").val();
             let name = $("#name").val();
             let text = $("#confession-text").val();
