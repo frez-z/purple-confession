@@ -18,7 +18,6 @@ $(document).ready(function(){
     $("#submit").click(function(){
         let token = getCookie("not-so-secret-token");
         const d = new Date();
-        alert(d.getTime() - Number(token))
         if (token === "" || d.getTime() - Number(token) >= 60_000){
             let faculty = $("#faculty").val();
             let name = $("#name").val();
@@ -46,8 +45,13 @@ $(document).ready(function(){
             document.cookie = "not-so-secret-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             // create new cookie
             document.cookie = "not-so-secret-token="+ d.getTime() +"; path=/; max-age=31536000";
+
+            $('#mainForm')[0].reset();
+            alert("Confession sent! Thank you for your contribution :)");
+
         } else {
             alert("Please wait 1 minute before submitting another confession");
+
         }
     });
 });
