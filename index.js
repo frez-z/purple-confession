@@ -19,7 +19,7 @@ $(document).ready(function(){
         let token = getCookie("not-so-secret-token");
         const d = new Date();
         alert(d.getTime() - Number(token))
-        if (token === "" || d.getTime() - Number(token) >= 10_000){
+        if (token === "" || d.getTime() - Number(token) >= 60_000){
             let faculty = $("#faculty").val();
             let name = $("#name").val();
             let text = $("#confession-text").val();
