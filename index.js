@@ -44,7 +44,7 @@ $(document).ready(function(){
                 return;
             }
             let text_to_send = text
-            if (faculty === "") {
+            if (faculty !== "") {
                 text_to_send = "[" + faculty + "] :" + text_to_send
             }
             text_to_send = text_to_send.toLowerCase()
